@@ -39,7 +39,7 @@ const Navbar = () => {
             <li className='hover:text-[#E76F00] hover:border-b-[1px] border-[#E76F00]'> <Link href='/pricing'>PRICING</Link> </li>
             <li className='hover:text-[#E76F00] hover:border-b-[1px] border-[#E76F00]'> <Link href='/'>HIRE</Link> </li>
         </ul>
-        <Button className='rounded-[5px] shadow-sm shadow-[#C87310] bg-gradient-to-r from-[#0DC26B] to-[#46B337] text-[#FEFAF4]' >CONTACT US</Button>
+        <Button className='rounded-[5px] shadow-sm shadow-[#C87310] bg-gradient-to-r from-[#0DC26B] to-[#46B337] text-[#FEFAF4]' ><Link href='/contactus'>CONTACT US</Link></Button>
       </div>
     </nav>
   )
