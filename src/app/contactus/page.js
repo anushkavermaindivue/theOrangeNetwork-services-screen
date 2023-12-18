@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image';
 import arrowImg from 'public/Arrow.png';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
@@ -7,15 +9,16 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import { Button } from '@/components/ui/button';
+import Map from '@/components/map';
 
 const ContactUs = () => {
   return (
-    <section className='w-[80%] mt-12 m-auto flex flex-col gap-y-28'>
+    <section className='mt-12 m-auto flex flex-col gap-y-28'>
       <div className="flex flex-col items-center">
           <h2 className="tracking-wide text-3xl font-bold flex flex-col items-end">Contact Us<div className="h-0.5 w-24 mt-1 bg-[#E76F00]"></div></h2>
-          <Image className='cursor-pointer mt-8' src={arrowImg} />
+          <Image className='cursor-pointer mt-8' src={arrowImg} alt='arrow image' />
       </div>
-      <div className='flex justify-between'>
+      <div className='flex justify-between w-[80%] m-auto'>
         <div className='p-8 max-w-[45%] flex flex-col gap-y-3'>
           <h1 className='text-3xl font-bold'>Have Questions?</h1>
           <h1 className='text-3xl font-bold'>Get in Touch!</h1>
@@ -64,13 +67,15 @@ const ContactUs = () => {
               </div>
               <div className='text-[#454D55] p-3 text-sm flex'>
                 <input id='agree' className='mr-3' type='checkbox' />
-                <label for='agree'>I agree that my data is collected and stored</label>
+                <label htmlFor='agree'>I agree that my data is collected and stored</label>
               </div>
               <Button className='bg-[#1D1D1D] hover:bg-[#1D1D1D] w-fit px-4 h-12'>🤙 Get In Touch (24/7)</Button>
           </form>
         </div>
       </div>
-      <div className='h-44'></div>
+      <div>
+        <Map />
+      </div>
     </section>
   )
 }
