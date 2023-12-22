@@ -6,7 +6,6 @@ import * as math from 'mathjs';
 
 
 const Calculator = () => {
-
   const [expression, setExpression] = useState("");
   const [customVariables, setCustomVariables] = useState({});
   // Default mode is "rad"
@@ -26,6 +25,8 @@ const Calculator = () => {
         ...customVariables,
         π: Math.PI,
         e: Math.E,
+        ln: math.log,
+        log: math.log10,
         // Add factorial function
         fact: math.factorial,
         sin: mode === "rad" ? Math.sin : math.sin,
@@ -80,7 +81,7 @@ const Calculator = () => {
         <div className="flex justify-between gap-x-2">
           <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case" onClick={() => handleClick("^")}>Inv</Button>
           <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case" onClick={() => handleClick("sin(")}>sin</Button>
-          <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case">In</Button>
+          <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case" onClick={() => handleClick("ln(")}>ln</Button>
           <Button className="bg-[#F1F3F4] hover:bg-[#F1F3F4] text-black w-24 normal-case" onClick={() => handleClick("7")}>7</Button>
           <Button className="bg-[#F1F3F4] hover:bg-[#F1F3F4] text-black w-24 normal-case" onClick={() => handleClick("8")}>8</Button>
           <Button className="bg-[#F1F3F4] hover:bg-[#F1F3F4] text-black w-24 normal-case" onClick={() => handleClick("9")}>9</Button>
@@ -105,9 +106,9 @@ const Calculator = () => {
           <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case text-lg" onClick={() => handleClick("-")}>-</Button>
         </div>
         <div className="flex justify-between gap-x-2">
-          <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case">Ans</Button>
+          <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case" onClick={() => handleClick('Ans')}>Ans</Button>
           <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case" onClick={() => handleClick("EXP")}>EXP</Button>
-          <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case">x<sup>y</sup> </Button>
+          <Button className="bg-[#DADCE0] hover:bg-[#DADCE0] text-black w-24 normal-case" onClick={() => handleClick('')}>x<sup>y</sup> </Button>
           <Button className="bg-[#F1F3F4] hover:bg-[#F1F3F4] text-black w-24 normal-case" onClick={() => handleClick("0")}>0</Button>
           <Button className="bg-[#F1F3F4] hover:bg-[#F1F3F4] text-black w-24 normal-case text-lg" onClick={() => handleClick(".")}>.</Button>
           <Button className="bg-[#4285F4] hover:bg-[#4285F4] text-white w-24 normal-case font-semibold text-lg" onClick={calculate}>=</Button>
