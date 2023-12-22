@@ -9,6 +9,8 @@ import PriceCard from "@/components/priceCard";
 
 const Page = () => {
 
+  let timer;
+
   const freeFeatures = {
     feature1 : 'Access to selected free courses.',
     feature2 : 'Limited course materials and resources.',
@@ -60,8 +62,8 @@ const Page = () => {
           <h2 className="text-3xl font-bold text-[#141414] flex flex-col items-end">Our Members Number<div className="h-0.5 w-28 mt-1 bg-[#E76F00]"></div></h2>
         </div>
         <div className="flex mt-32 justify-between">
-          <MembersCard title='Registered Member' number='80 +' src={memberImg} />
-          <MembersCard title='Registered Left Member' number='80 +' src={memberImg} />
+          <MembersCard title='Registered Member' src={memberImg} timer={timer} />
+          <MembersCard title='Registered Left Member' src={memberImg} timer={timer} />
         </div>
       </div>
 
